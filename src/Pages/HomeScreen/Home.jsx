@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Home.css";
 import { AiOutlineFileAdd } from "react-icons/ai";
 import Loader from "../../Components/Loader/Loader";
-
+import Endpoints from "../../constants/endpoints";
 function Home() {
   const [blogdata, setBlogdata] = useState([]);
   const [isloading, setIsloading] = useState(false);
@@ -15,7 +15,7 @@ function Home() {
   useEffect(() => {
     setIsloading(true);
     axios
-      .get("http://localhost:3500/getallpost")
+      .get(`${Endpoints.BASE_URL}/getallpost`)
       .then((res) => setBlogdata(res.data))
       .catch((err) => console.log(err))
       .finally(() => setIsloading(false));

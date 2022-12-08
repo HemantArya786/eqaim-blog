@@ -4,7 +4,7 @@ import { RiHome2Line } from "react-icons/ri";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import Loader from "../../Components/Loader/Loader";
-
+import Endpoints from "../../constants/endpoints";
 function BlogPost() {
   const { id } = useParams();
 
@@ -14,7 +14,7 @@ function BlogPost() {
   useEffect(() => {
     setIsloading(true);
     axios
-      .get(`http://localhost:3500/getpost/${id}`)
+      .get(`${Endpoints.BASE_URL}/getpost/${id}`)
       .then((res) => {
         setPost(res.data);
       })

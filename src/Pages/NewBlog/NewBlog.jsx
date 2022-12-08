@@ -7,7 +7,7 @@ import { convertToHTML } from "draft-convert";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../Components/Loader/Loader";
-
+import Endpoints from "../../constants/endpoints";
 function NewBlog() {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [title, setTitle] = useState("");
@@ -22,7 +22,7 @@ function NewBlog() {
       setIsloading(false);
     } else {
       axios
-        .post(`http://localhost:3500/newpost`, {
+        .post(`${Endpoints.BASE_URL}/newpost`, {
           title: title,
           author: "hemant",
           content: convertToHTML(editorState.getCurrentContent()),
