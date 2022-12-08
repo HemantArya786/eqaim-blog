@@ -3,7 +3,7 @@ import "./Navbar.css";
 
 function Navbar() {
   return (
-    <div className="border border-danger nav-bg-color">
+    <div className="border nav-bg-color">
       <h1>
         <b>Eqaim Blog</b>
       </h1>

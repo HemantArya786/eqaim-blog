@@ -5,3 +5,8 @@
 .button-color {
   color: #d1d1d1;
 }
+.floating-button {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
